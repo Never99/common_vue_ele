@@ -10,7 +10,9 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+    "area-data": "^5.0.6",
     "vue": "^2.5.2",
+    "vue-area-linkage": "^5.1.0",
     "vue-router": "^3.0.1"
   },
   "devDependencies": {
@@ -49,6 +51,7 @@
     "shelljs": "^0.7.6",
     "uglifyjs-webpack-plugin": "^1.1.1",
     "url-loader": "^0.5.8",
+    "v-distpicker": "^1.0.21",
     "vue-fullcalendar": "^1.0.9",
     "vue-loader": "^13.3.0",
     "vue-lunar-full-calendar": "^1.2.2",

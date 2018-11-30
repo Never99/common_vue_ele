@@ -18,6 +18,10 @@
         <i class="el-icon-location"></i>
         <span slot="title">日期插件</span>
       </el-menu-item>
+      <el-menu-item index="/checkbox">
+        <i class="el-icon-location"></i>
+        <span slot="title">复选组件</span>
+      </el-menu-item>
     </el-menu>
     <!-- 缩放menu -->
     <div class="sub_scale_bot">

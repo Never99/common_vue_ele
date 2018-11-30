@@ -8,6 +8,9 @@ import store from './store/index';
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 
+import VueAreaLinkage from 'vue-area-linkage';
+Vue.use(VueAreaLinkage)
+
 Vue.use(ElementUI);
 
 Vue.config.productionTip = false
