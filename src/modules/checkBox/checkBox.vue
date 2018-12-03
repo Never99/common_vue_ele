@@ -1,16 +1,43 @@
 <template>
     <div>
-        <!--给全选按钮绑定v-mode变量，值为true时就是选中状态，绑定点击事件，执行全选和反选操作-->
-        <input type='checkbox' class='input-checkbox' v-model='checked' v-on:click='checkedAll'>全选
-        <div v-for='checkb in checkboxData' :key="checkb.id">
-            <!--给每个复选按钮绑定同一个v-mode数组变量，数组里面有相应的value就被选中-->
-            <input type='checkbox' name='checkboxinput' class='input-checkbox' v-model='checkboxList' :value="checkb.id">{{checkb.value}}
+        <div class="div">
+            <!--给全选按钮绑定v-mode变量，值为true时就是选中状态，绑定点击事件，执行全选和反选操作-->
+            <input type='checkbox' class='input-checkbox' v-model='checked' v-on:click='checkedAll'>全选
+            <div v-for='checkb in checkboxData' :key="checkb.id">
+                <!--给每个复选按钮绑定同一个v-mode数组变量，数组里面有相应的value就被选中-->
+                <input type='checkbox' name='checkboxinput' class='input-checkbox' v-model='checkboxList' :value="checkb.id">{{checkb.value}}
+            </div>
+        </div>
+        <div class="imgUp">
+            <viewer :images="myimage">
+                <img :src="myimage">
+            </viewer>
         </div>
     </div>
 </template>
 
 <script>
 export default {
+    data () {
+        return {
+            checkboxData:[{
+                id:'1',
+                value:'苹果'
+            },{
+                id:'2',
+                value:'荔枝'
+            },{
+                id:'3',
+                value:'香蕉'
+            },{
+                id:'4',
+                value:'火龙果'
+            }],
+            checkboxList:[],
+            checked: false,
+            myimage: "https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3184350632,1307615993&fm=200&gp=0.jpg"
+        }
+    },
     methods:{
         checkedAll: function() {
             if (this.checked) {//实现反选
@@ -33,25 +60,6 @@ export default {
                 }
             },
             deep: true
-        }
-    },
-    data () {
-        return {
-            checkboxData:[{
-                id:'1',
-                value:'苹果'
-            },{
-                id:'2',
-                value:'荔枝'
-            },{
-                id:'3',
-                value:'香蕉'
-            },{
-                id:'4',
-                value:'火龙果'
-            }],
-            checkboxList:[],
-            checked: false
         }
     }
 };
